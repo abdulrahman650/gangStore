@@ -4,7 +4,7 @@ import 'package:gang_store/features/gang_store/auth/widgets/container_feild_regi
 import 'package:gang_store/features/gang_store/auth/widgets/logo_bar_SignUp.dart';
 import 'package:gap/gap.dart';
 
-import '../../../core/componant/app_colors.dart';
+import '../../../core/constant/app_colors.dart';
 
 import '../../../core/componant/custom_text.dart';
 

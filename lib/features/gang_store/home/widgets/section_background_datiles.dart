@@ -1,14 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:gang_store/features/gang_store/home/home_tab.dart';
 import 'package:gang_store/features/gang_store/layout/layout.dart';
-
-import '../../../../core/componant/app_colors.dart';
-import '../../../../core/componant/custom_text.dart';
+import '../data/product_model.dart';
 
 class SectionBackgroundDatiles extends StatelessWidget {
-  const SectionBackgroundDatiles({super.key});
+  const SectionBackgroundDatiles({
+    super.key,
+    required this.product,
+  });
+
+  final ProductModel product;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +22,8 @@ class SectionBackgroundDatiles extends StatelessWidget {
             ClipRRect(
                 borderRadius:
                 BorderRadius.vertical(top: Radius.circular(14)),
-                child: Image.asset("assets/images/Eyeshadow2.png",
+                child: Image.network(
+                  product.image,
                   fit: BoxFit.cover,
                   width: double.infinity,
                 )

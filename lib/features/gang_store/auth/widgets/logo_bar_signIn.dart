@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
 
-import '../../../../core/componant/app_colors.dart';
+import '../../../../core/constant/app_colors.dart';
 import '../../../../core/componant/custom_text.dart';
 
 class   LogoBarSignIn extends StatelessWidget {

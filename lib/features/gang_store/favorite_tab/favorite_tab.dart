@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../core/componant/app_colors.dart';
+import '../../../core/constant/app_colors.dart';
 
 
 class favoriteTab extends StatelessWidget {

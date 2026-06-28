@@ -2,7 +2,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../../../core/componant/app_colors.dart';
+import '../../../core/constant/app_colors.dart';
 import '../cart_tab/cart_tab.dart';
 import '../favorite_tab/favorite_tab.dart';
 import '../home/home_tab.dart';
@@ -90,7 +90,6 @@ class _LayoutState extends State<Layout> with TickerProviderStateMixin {
           ),
         ),)
       );
-
   }
 }
 

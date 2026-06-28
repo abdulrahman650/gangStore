@@ -1,14 +1,30 @@
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:gang_store/core/componant/app_colors.dart';
+import 'package:gang_store/core/constant/app_colors.dart';
 import 'package:gap/gap.dart';
 
 import '../../../../core/componant/custom_text.dart';
 
 class ProductItem extends StatelessWidget {
-  const ProductItem({super.key, this.onTap});
+  const ProductItem({
+    super.key,
+    this.onTap,
+    required this.image,
+    required this.title,
+    required this.brand,
+    required this.desc,
+    required this.rate,
+    required this.price,
+    required this.afterPrice
+
+
+  });
 
   final VoidCallback? onTap;
+  final String image, title, desc, rate,price,afterPrice,brand;
+
+
   @override
   Widget build(BuildContext context) {
     final Size screenSize = MediaQuery.sizeOf(context);
@@ -36,10 +52,16 @@ class ProductItem extends StatelessWidget {
                     borderRadius: BorderRadius.vertical(
                       top: Radius.circular(14),
                     ),
-                    child: Image.asset(
-                      "assets/images/Eyeshadow2.png",
-                      fit: BoxFit.fitWidth,
-                    ),
+                    child:
+                    Image.network(
+                      image,
+                      fit: BoxFit.cover,
+                      errorBuilder: (context, error, stackTrace) {
+                        return const Center(
+                          child: Icon(Icons.image_not_supported),
+                        );
+                      },
+                    )
                   ),
                   PositionedDirectional(
                     top: screenSize.height * 0.01,
@@ -66,7 +88,6 @@ class ProductItem extends StatelessWidget {
                       decoration: BoxDecoration(
                         color: AppColors.pincy,
                         borderRadius: BorderRadius.circular(16),
-                        // border: Border.all(width: 5,color: Colors.white)
                       ),
                       child: Center(
                         child: CustomText(text: "-10%", color: Colors.red),
@@ -84,16 +105,18 @@ class ProductItem extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     CustomText(
-                      text: "ESSENCE",
+                      text: brand,
+
                       size: 9,
                       weight: FontWeight.w500,
                       color: Colors.grey,
                     ),
                     CustomText(
-                      text: "Essence Mascara Lash Princess",
+                      text: desc,
                       size: 12,
                       weight: FontWeight.w700,
                       color: AppColors.black,
+                      maxLines: 2,
                     ),
                     Row(
                       children: [
@@ -104,7 +127,7 @@ class ProductItem extends StatelessWidget {
                         ),
                         Gap(6),
                         CustomText(
-                          text: "4.5",
+                          text: rate,
                           size: 14,
                           weight: FontWeight.bold,
                           color: AppColors.primary,
@@ -118,15 +141,16 @@ class ProductItem extends StatelessWidget {
                         SizedBox(
                           child: Row(
                             children: [
-                              const Icon(CupertinoIcons.money_dollar, size: 20),
+                               Icon(CupertinoIcons.money_dollar, size: 20),
                               CustomText(
-                                text: "8,18  ",
+                                text: price,
                                 size: 14,
                                 weight: FontWeight.bold,
                                 color: AppColors.primary,
                               ),
+                              Gap(5),
                               Text(
-                                " 9,18",
+                                afterPrice,
                                 style: TextStyle(
                                   decoration: TextDecoration.lineThrough,
                                   fontSize: 14,

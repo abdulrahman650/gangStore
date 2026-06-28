@@ -1,15 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
-
-import '../../../../core/componant/app_colors.dart';
+import '../../../../core/constant/app_colors.dart';
 import '../../../../core/componant/custom_text.dart';
 
 
-class  UserHeader extends StatelessWidget {
-  const UserHeader({super.key, required this.userName, required this.userImage});
-  final String userName,  userImage;
+class UserHeader extends StatelessWidget {
+  const UserHeader(
+      {super.key, required this.userName, required this.userImage});
+
+  final String userName, userImage;
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +33,7 @@ class  UserHeader extends StatelessWidget {
                   size: 32,
                   weight: FontWeight.w700,
                   color: AppColors.blue,
-                ),CustomText(
+                ), CustomText(
                   text: " STORE",
                   size: 32,
                   weight: FontWeight.w700,
@@ -45,7 +45,7 @@ class  UserHeader extends StatelessWidget {
         ),
         Spacer(),
         IconButton(
-          onPressed: (){},
+          onPressed: () {},
           icon: CircleAvatar(
             radius: 22.0,
             backgroundColor: Colors.grey[300],
@@ -57,7 +57,7 @@ class  UserHeader extends StatelessWidget {
           ),
         ),
         IconButton(
-          onPressed: (){},
+          onPressed: () {},
           icon: CircleAvatar(
             radius: 22.0,
             backgroundColor: Colors.grey[300],
@@ -79,7 +79,7 @@ class  UserHeader extends StatelessWidget {
               ),
               color: Colors.grey,
               borderRadius: BorderRadius.circular(40),
-              border: Border.all(width: 5,color: Colors.white)
+              border: Border.all(width: 5, color: Colors.white)
           ),
         ),
       ],

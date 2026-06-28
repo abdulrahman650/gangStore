@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'app_colors.dart';
+import '../constant/app_colors.dart';
 
 
 class CustomTextfeild extends StatefulWidget {
